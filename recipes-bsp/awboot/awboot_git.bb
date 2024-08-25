@@ -10,6 +10,7 @@ inherit deploy
 SRC_URI += " \
     file://0001-fix-makefile-path.patch \
     file://0002-disable-fs-cache.patch \
+    file://0004-change-dtb-name-based-on-mainline-kernel-artifacts.patch \
 "
 
 AWBOOT_BINARY = "awboot-boot-sd.bin"

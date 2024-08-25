@@ -1,0 +1,48 @@
+diff --git a/arch/arm/boot/dts/allwinner/sunxi-d1s-t113-mangopi-mq-r.dtsi b/arch/arm/boot/dts/allwinner/sunxi-d1s-t113-mangopi-mq-r.dtsi
+index a415c4a..d24e742 100644
+--- a/arch/arm/boot/dts/allwinner/sunxi-d1s-t113-mangopi-mq-r.dtsi
++++ b/arch/arm/boot/dts/allwinner/sunxi-d1s-t113-mangopi-mq-r.dtsi
+@@ -9,11 +9,12 @@
+ 
+ / {
+ 	aliases {
+-		serial3 = &uart3;
++		serial5 = &uart5;
+ 	};
+ 
+ 	chosen {
+-		stdout-path = "serial3:115200n8";
++		stdout-path = "serial5:115200n8";
++		bootargs = "mem=128M cma=64M root=/dev/mmcblk0p2 init=/sbin/init rootwait console=ttyS5,115200 earlyprintk=sunxi-uart,0x2501400";
+ 	};
+ 
+ 	leds {
+@@ -108,9 +109,9 @@
+ 	vcc-pg-supply = <&reg_3v3>;
+ };
+ 
+-&uart3 {
++&uart5 {
+ 	pinctrl-names = "default";
+-	pinctrl-0 = <&uart3_pb_pins>;
++	pinctrl-0 = <&uart5_pb_pins>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/riscv/boot/dts/allwinner/sunxi-d1s-t113.dtsi b/arch/riscv/boot/dts/allwinner/sunxi-d1s-t113.dtsi
+index 822f022..7c7a60a 100644
+--- a/arch/riscv/boot/dts/allwinner/sunxi-d1s-t113.dtsi
++++ b/arch/riscv/boot/dts/allwinner/sunxi-d1s-t113.dtsi
+@@ -143,6 +143,12 @@
+ 				pins = "PB6", "PB7";
+ 				function = "uart3";
+ 			};
++
++			/omit-if-no-ref/
++			uart5_pb_pins: uart5-pb-pins {
++				pins = "PB4", "PB5";
++				function = "uart5";
++			};
+ 		};
+ 
+ 		ccu: clock-controller@2001000 {
