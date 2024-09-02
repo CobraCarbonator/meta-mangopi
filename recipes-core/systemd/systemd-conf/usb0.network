@@ -2,6 +2,12 @@
 Name=usb0
 
 [Network]
+Address=192.168.20.1/24
+DHCPServer=true
+IPMasquerade=ipv4
+
+[DHCPServer]
+PoolOffset=100
+PoolSize=20
+EmitDNS=yes
 DNS=8.8.8.8
-Address=192.168.20.2/24
-Gateway=192.168.20.1
