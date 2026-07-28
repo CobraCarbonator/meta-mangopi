@@ -10,12 +10,12 @@ Following preipherals are working and tested
 # Getting started
 1. Clone required layers:
 ```bash
-git clone git://git.yoctoproject.org/poky -b dunfell
+git clone https://git.yoctoproject.org/poky -b dunfell
 cd poky/
-git clone git://git.yoctoproject.org/meta-arm -b dunfell
+git clone https://git.yoctoproject.org/meta-arm -b dunfell
 git clone https://github.com/openembedded/meta-openembedded.git -b dunfell
 git clone https://github.com/meta-qt5/meta-qt5.git -b dunfell
-git clone https://github.com/ArashEM/meta-mangopi.git -b dunfell
+git clone https://github.com/CobraCarbonator/meta-mangopi.git -b dunfell
 cd ../
 ```
 2. Export template configuraiton path and initialize build envrionment
